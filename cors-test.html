@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CORS Test</title>
+</head>
+<body>
+    <h2>CORS Validation Test</h2>
+    <button onclick="testCORS()">Test API</button>
+
+    <script>
+        function testCORS() {
+            fetch("https://copsapi.shriramlife.me/api/v2.10/login_logout", {
+                method: "GET",
+                credentials: "include"
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log("Response received:", data);
+                alert("CORS Allowed - Check console");
+            })
+            .catch(error => {
+                console.error("Blocked by CORS:", error);
+                alert("CORS Blocked");
+            });
+        }
+    </script>
+</body>
+</html>

@@ -11,12 +11,13 @@
             req.open('POST','https://copsapi.shriramlife.me/api/v2.10/login_logout');
             req.setRequestHeader('content-Type','application/json');
             req.onload = function() {
-                document.getElementById('output).innerHTML =
-                                        'SUCCESS! Respone: ' + this.responseText;
+                document.getElementById('output').innerHTML =
+                                        'SUCCESS! Response: ' + this.responseText;
             };
             req.send('{"command":"login","userId":"agent01","password":"Welcome@123"}');
         }
     </script>
 </body>
 </html>
+
 
